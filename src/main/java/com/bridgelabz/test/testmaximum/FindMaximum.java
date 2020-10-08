@@ -68,4 +68,14 @@ public class FindMaximum<T extends Comparable> {
 		}
 		return max;
 	}
+
+	// Finding maximum among any number of parameters
+	public <E extends Comparable> E testMaximumAmongOptionalValues(E x, E y, E... optionalValues) {
+		for (E value : optionalValues) {
+			if (value.compareTo(x) > 0) {
+				x = value;
+			}
+		}
+		return x;
+	}
 }

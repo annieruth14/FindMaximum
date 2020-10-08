@@ -95,4 +95,11 @@ public class FindMaximumTest {
 		Comparable maximumString = findMaximum.testMaximum();
 		Assert.assertEquals(maximumString, "Peach");
 	}
+
+	@Test
+	public void givenOptionalValues_whenFindMax_returnTrue() {
+		Integer xInt = 10, yInt = 19, zInt = 14, aInt = 2, bInt = 24, cInt = 5;
+		Comparable maximumInt = findMaximum.testMaximumAmongOptionalValues(xInt, yInt, zInt, aInt, bInt, cInt);
+		Assert.assertEquals(maximumInt, 24);
+	}
 }
