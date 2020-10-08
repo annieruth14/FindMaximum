@@ -1,10 +1,11 @@
 package com.bridgelabz.test.testmaximum;
 
 public class FindMaximum {
-	// Welcome message 
+	// Welcome message
 	public void welcomeMessage() {
 		System.out.println("Welcome to Test Maximum of 3 variables");
 	}
+
 	// Find maximum among three integers
 	public int maximumAmongThreeIntegers(Integer x, Integer y, Integer z) {
 		Integer max = x;
@@ -16,8 +17,22 @@ public class FindMaximum {
 		}
 		return max;
 	}
+
+	// Find maximum among three floats
 	public float maximumAmongThreeFloat(Float x, Float y, Float z) {
 		Float max = x;
+		if (y.compareTo(max) > 0) {
+			max = y;
+		}
+		if (z.compareTo(max) > 0) {
+			max = z;
+		}
+		return max;
+	}
+
+	// Find maximum among three String
+	public String maximumAmongThreeStrings(String x, String y, String z) {
+		String max = x;
 		if (y.compareTo(max) > 0) {
 			max = y;
 		}
