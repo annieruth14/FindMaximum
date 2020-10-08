@@ -76,6 +76,11 @@ public class FindMaximum<T extends Comparable> {
 				x = value;
 			}
 		}
+		printMax(x);
 		return x;
+	}
+	// Printing maximum
+	public <T> void printMax(T x) {
+		System.out.println("The maximum value is: "+ x);
 	}
 }
