@@ -9,7 +9,7 @@ public class FindMaximumTest {
 
 	@Before
 	public void start() {
-		findMaximum = new FindMaximum();
+		findMaximum = new FindMaximum(null, null, null);
 	}
 
 	@Test
@@ -73,20 +73,26 @@ public class FindMaximumTest {
 	}
 
 	@Test
-	public void givenInteger_whenFindMax_returnTrue() {
-		Integer maximumInt = findMaximum.findMaximum(10, 19, 14);
-		//Assert.assertEquals(maximumInt, 12);
-	}
-
-	@Test
 	public void givenFloat_whenFindMax_returnTrue() {
-		Float maximumFloat = findMaximum.findMaximum(2.3f, 9.6f, 8.5f);
-		Assert.assertEquals(maximumFloat, 9.6f, 0.0f);
+		Float xFloat = 10.f, yFloat = 19.6f, zFloat = 14.9f;
+		findMaximum = new FindMaximum(xFloat, yFloat, zFloat);
+		Comparable maximumFloat = findMaximum.testMaximum();
+		Assert.assertEquals(maximumFloat, 19.6f);
 	}
 
 	@Test
-	public void givenMessage_whenFindMax_returnTrue() {
-		String maximumString = findMaximum.findMaximum("Peach", "Apple", "Banana");
+	public void givenInteger_whenFindMax_returnTrue() {
+		Integer xInt = 10, yInt = 19, zInt = 14;
+		findMaximum = new FindMaximum(xInt, yInt, zInt);
+		Comparable maximumInt = findMaximum.testMaximum();
+		Assert.assertEquals(maximumInt, 19);
+	}
+
+	@Test
+	public void givenString_whenFindMax_returnTrue() {
+		String xString = "Peach", yString = "Banana", zString = "Apple";
+		findMaximum = new FindMaximum(xString, yString, zString);
+		Comparable maximumString = findMaximum.testMaximum();
 		Assert.assertEquals(maximumString, "Peach");
 	}
 }
