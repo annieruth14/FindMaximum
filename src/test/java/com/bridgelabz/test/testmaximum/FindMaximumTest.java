@@ -71,4 +71,22 @@ public class FindMaximumTest {
 		String maximumString = findMaximum.maximumAmongThreeStrings("Banana", "Apple", "Peach");
 		Assert.assertEquals(maximumString, "Peach");
 	}
+
+	@Test
+	public void givenInteger_whenFindMax_returnTrue() {
+		Integer maximumInt = findMaximum.findMaximum(10, 19, 14);
+		//Assert.assertEquals(maximumInt, 12);
+	}
+
+	@Test
+	public void givenFloat_whenFindMax_returnTrue() {
+		Float maximumFloat = findMaximum.findMaximum(2.3f, 9.6f, 8.5f);
+		Assert.assertEquals(maximumFloat, 9.6f, 0.0f);
+	}
+
+	@Test
+	public void givenMessage_whenFindMax_returnTrue() {
+		String maximumString = findMaximum.findMaximum("Peach", "Apple", "Banana");
+		Assert.assertEquals(maximumString, "Peach");
+	}
 }
