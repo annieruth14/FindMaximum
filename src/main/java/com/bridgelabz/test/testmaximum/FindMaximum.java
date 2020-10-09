@@ -58,27 +58,28 @@ public class FindMaximum<T extends Comparable> {
 	}
 
 	// Find maximum using generic type
-	public <E extends Comparable> E testMaximum(E x, E y, E z) {
+	public <E extends Comparable> E testMaximum(E x, E y, E... optionalValues) {
 		E max = x;
 		if (y.compareTo(max) > 0) {
 			max = y;
 		}
 		if (z.compareTo(max) > 0) {
-			max = z;
+			max = testMaximumAmongOptionalValues(max, optionalValues);
 		}
 		return max;
 	}
 
-	// Finding maximum among any number of parameters
-	public <E extends Comparable> E testMaximumAmongOptionalValues(E x, E y, E... optionalValues) {
+	// Maximum among optional values
+	public <E extends Comparable> E testMaximumAmongOptionalValues(E max, E... optionalValues) {
 		for (E value : optionalValues) {
-			if (value.compareTo(x) > 0) {
-				x = value;
+			if (value.compareTo(max) > 0) {
+				max = value;
 			}
 		}
-		printMax(x);
-		return x;
+		printMax(max);
+		return max;
 	}
+
 	// Printing maximum
 	public <T> void printMax(T x) {
 		System.out.println("The maximum value is: "+ x);

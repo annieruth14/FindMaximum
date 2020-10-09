@@ -102,4 +102,14 @@ public class FindMaximumTest {
 		Comparable maximumInt = findMaximum.testMaximumAmongOptionalValues(xInt, yInt, zInt, aInt, bInt, cInt);
 		Assert.assertEquals(maximumInt, 24);
 	}
+	@Test
+	public void givenOptionalValues1_whenFindMax_returnTrue() {
+		Comparable maximumFloat = findMaximum.testMaximumAmongOptionalValues(3.6f , 2.5f , 8.9f, 13.9f, 18.9f, 5.6f );
+		Assert.assertEquals(maximumFloat, 18.9f);
+	}
+	@Test
+	public void givenOptionalValues2_whenFindMax_returnTrue() {
+		Comparable maximumString = findMaximum.testMaximumAmongOptionalValues("Peach","Banana","Apple","Orange","Papaya" );
+		Assert.assertEquals(maximumString, "Peach");
+	}
 }
